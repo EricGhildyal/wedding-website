@@ -21,6 +21,8 @@ const Registry = () => {
     <div id="registry-section">
       <Fade top delay={100}>
         <h1>REGISTRY</h1>
+      </Fade>
+      <Fade left delay={100}>
         <div className="registry-container">
           <div className="item">
             <a

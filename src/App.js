@@ -17,7 +17,7 @@ import FAQ from "./pages/FAQ";
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
   const [isVisible, setIsVisible] = useState(true);
-  const [height, setHeight] = useState(0);
+  const [, setHeight] = useState(0);
 
   const homeRef = useRef(null);
 
