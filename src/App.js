@@ -37,6 +37,7 @@ function App() {
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
+    // eslint-disable-next-line
   }, []);
 
   const listenToScroll = () => {
