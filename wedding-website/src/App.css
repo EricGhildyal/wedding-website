@@ -1,0 +1,104 @@
+/* Global */
+
+/* 
+Blue: #2A3949
+Beige: #fbf7ee
+Red: #6c0e23
+*/
+
+@font-face {
+  font-family: CaslonGraphique;
+  src: url("./assets/fonts/CaslonGraphiqueEF.ttf");
+}
+
+@font-face {
+  font-family: EngraversGothic;
+  src: url("./assets/fonts/EngraversGothic.otf");
+}
+
+html {
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "EngraversGothic", "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/texture.svg");
+  background-color: #fbf7ee;
+  background-position: top center;
+  background-size: 40%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "CaslonGraphique";
+  font-size: 95px;
+  color: #2a3949;
+}
+
+h2 {
+  font-family: "CaslonGraphique";
+  margin: 0;
+  line-height: 0.95em;
+  color: #2a3949;
+}
+
+#home-section,
+#where-section,
+#stay-section,
+#rsvp-section,
+#registry-section,
+#faq-section {
+  height: 110vh;
+  text-align: center;
+  padding: 20px;
+  padding-left: 120px;
+}
+
+.border {
+  border: 1px solid #000000;
+}
+
+button {
+  display: block;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.copyright {
+  margin: 50px;
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  h1 {
+    font-size: 80px;
+  }
+
+  body {
+    background-size: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  #home-section,
+  #where-section,
+  #stay-section,
+  #rsvp-section,
+  #registry-section,
+  #faq-section {
+    padding: 15px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,103 @@
+#registry-section {
+  height: 100vh;
+}
+
+#registry-section .registry-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#registry-section a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#registry-section a:hover::before {
+  content: "view";
+  background: #fff;
+  width: 84px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #4d4d4d;
+  position: absolute;
+  display: block;
+  top: 32%;
+  left: 35%;
+  border: 1px solid #e8e8e8;
+  z-index: 2;
+  text-decoration: none !important;
+}
+
+.registry-container .item {
+  margin: 15px 15px;
+  font-size: 20px;
+  flex: 1;
+}
+
+.registry-container .item:hover {
+  filter: brightness(85%);
+}
+
+.registry-container .item .location {
+  height: 20px;
+  margin: 5px 0 5px 0;
+}
+
+.registry-container .item img {
+  height: 250px;
+  width: 250px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #registry-section {
+    height: 90vh;
+  }
+  #registry-section .registry-container {
+    width: 90%;
+  }
+
+  .registry-container .item img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .registry-container .item {
+    margin: 5px 5px;
+    font-size: 18px;
+  }
+
+  #registry-section a:hover::before {
+    top: 30%;
+    left: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #registry-section .registry-container {
+    width: 100%;
+  }
+
+  .registry-container .item img {
+    height: 75px;
+    width: 75px;
+  }
+
+  .registry-container .item {
+    font-size: 15px;
+  }
+
+  #registry-section a:hover::before {
+    width: 42px;
+    height: 16px;
+    line-height: 16px;
+    top: 25%;
+    left: 25%;
+  }
+}

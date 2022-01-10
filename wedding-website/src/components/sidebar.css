@@ -1,0 +1,107 @@
+/* Sidebar */
+
+.sidebar {
+  padding: 10px;
+  width: 120px;
+  height: 100%;
+  float: left;
+  position: fixed;
+  z-index: 9999; /* Top of the wooooorld */
+  overflow: hidden;
+}
+
+.sidebar .logo {
+  margin-left: -20px;
+  height: 150px;
+  width: 150px;
+}
+
+.sidebar .links {
+  margin-top: 70px;
+  width: 0;
+  height: 0;
+}
+
+.sidebar .links button {
+  font-size: 20px;
+  color: #2a3949;
+  margin-bottom: calc(100vh / 9);
+  transform: rotate(-90deg);
+  display: block;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.sidebar .links div {
+  position: absolute;
+  top: 35px;
+}
+
+.sidebar .links div:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -3px;
+  right: -2px;
+  background-color: #6c0e23;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar .links div:hover:before {
+  visibility: visible;
+  width: 110%;
+}
+
+.sidebar .selected div:before {
+  visibility: visible;
+  width: 110%;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    text-align: center;
+    left: 20px;
+    top: 20px;
+  }
+
+  .sidebar .links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background: #1a1a1a;
+    opacity: 0.97;
+    margin: 0;
+  }
+
+  .sidebar .links button {
+    font-size: 35px;
+    transform: rotate(0deg);
+    margin-bottom: 30px;
+    width: 100%;
+    color: #ffffff;
+  }
+
+  .sidebar .close {
+    text-align: left;
+    margin: 20px 0 0 30px;
+  }
+
+  .sidebar .logo {
+    margin-top: -75px !important;
+    margin: 0 auto;
+    margin-bottom: -20px;
+  }
+
+  .sidebar .links div {
+    position: relative;
+  }
+
+  .sidebar .selected div:before {
+    visibility: hidden;
+  }
+}

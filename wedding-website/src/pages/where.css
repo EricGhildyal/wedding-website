@@ -1,0 +1,185 @@
+/* Where */
+#where-section {
+  height: 120vh;
+}
+
+#where-section .wrapper {
+  font-family: "EngraversGothic";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  height: 70vh;
+  gap: 40px;
+  display: grid;
+}
+
+#where-section .logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 1;
+}
+
+#where-section .pics {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  position: relative;
+}
+
+#where-section .pics .logo {
+  height: 130px;
+  position: relative;
+  top: 130px;
+  right: 50px;
+  z-index: 999;
+}
+
+#where-section .pics .pic1 {
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  filter: brightness(75%);
+}
+
+#where-section .pics .pic2 {
+  height: 375px;
+  position: absolute;
+  top: 350px;
+  right: 10px;
+  border-radius: 5px;
+}
+
+#where-section .address {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 1;
+  padding: 20px;
+}
+
+#where-section a {
+  color: #6c0e23;
+  font-size: 38px;
+  text-decoration: none;
+}
+
+#where-section a:hover {
+  text-decoration: underline;
+}
+
+#where-section h2:nth-child(1) {
+  margin-bottom: 25px;
+}
+
+#where-section div {
+  font-size: 25px;
+  line-height: 1.3em;
+  letter-spacing: 0.01em;
+  padding: 10px;
+}
+
+#where-section .info {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 2;
+  padding: 25px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1200px) {
+  #where-section {
+    height: 150vh;
+  }
+
+  #where-section .wrapper {
+    gap: 15px;
+  }
+
+  #where-section .address {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+  }
+
+  #where-section a {
+    font-size: 28px;
+  }
+
+  #where-section .info {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  #where-section .pics {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+
+  #where-section .pics .logo {
+    height: 130px;
+    top: 130px;
+    right: 0px;
+  }
+
+  #where-section .pics .pic1 {
+    height: 450px;
+    top: 0;
+    left: 0;
+  }
+
+  #where-section .pics .pic2 {
+    top: 300px;
+    right: 30px;
+  }
+
+  #where-section div {
+    line-height: 1.1em;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #where-section {
+    height: 165vh;
+  }
+
+  #where-section .wrapper {
+    gap: 0px;
+  }
+
+  #where-section a {
+    font-size: 18px;
+  }
+
+  #where-section .pics .logo {
+    height: 80px;
+    top: 70px;
+    right: 0px;
+  }
+
+  #where-section .pics .pic1 {
+    width: 95%;
+    height: auto;
+    top: 0;
+    left: 10px;
+  }
+
+  #where-section .pics .pic2 {
+    width: 80%;
+    height: auto;
+    top: 200px;
+    right: 15px;
+  }
+
+  #where-section div {
+    font-size: 20px;
+    line-height: 1em;
+  }
+}

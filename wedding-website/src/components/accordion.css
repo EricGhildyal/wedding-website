@@ -1,0 +1,105 @@
+@font-face {
+  font-family: EngraversGothic;
+  src: url("../assets/fonts/EngraversGothic.otf");
+}
+
+#faq-section .wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  font-size: 30px;
+  line-height: 1.4;
+  font-family: "EngraversGothic", sans-serif;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+.accordion {
+  width: 100%;
+}
+.panel {
+  background-color: #2a3949;
+  border-radius: 10px;
+}
+.panel__label {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 25px 60px 25px 25px;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: inherit;
+  transition: color 0.2s linear;
+  cursor: pointer;
+  color: #fbf7ee;
+}
+.panel__label:focus {
+  outline: none;
+}
+.panel__label:after,
+.panel__label:before {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  width: 22px;
+  height: 2px;
+  margin-top: -2px;
+  background-color: #fbf7ee;
+}
+.panel__label:before {
+  transform: rotate(-90deg);
+  transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.panel[aria-expanded="true"] .panel__content {
+  opacity: 1;
+}
+.panel[aria-expanded="true"] .panel__label {
+  color: #fbf7ee;
+}
+.panel[aria-expanded="true"] .panel__label:before {
+  transform: rotate(0deg);
+}
+.panel__inner {
+  overflow: hidden;
+  will-change: height;
+  transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.panel__content {
+  margin: 5px 25px 25px;
+  font-size: 25px;
+  color: #fbf7ee;
+  opacity: 0;
+  transition: opacity 0.3s linear 0.18s;
+  text-align: left;
+  padding-left: 25px;
+}
+.panel:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #faq-section .wrapper {
+    width: 90%;
+  }
+
+  .panel__label {
+    font-size: 25px;
+  }
+
+  .panel__content {
+    margin: 0px 15px 15px;
+    font-size: 20px;
+    padding-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #faq-section .wrapper {
+    width: 95%;
+  }
+}
