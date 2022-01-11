@@ -58,7 +58,6 @@ const Registry = () => {
             >
               <img src={Wine} alt="pic1"></img>
               <div className="title">Honeymoon Wine Tasting</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -69,7 +68,6 @@ const Registry = () => {
             >
               <img src={Car} alt="pic1"></img>
               <div className="title">Honeymoon Car Rental</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -80,7 +78,6 @@ const Registry = () => {
             >
               <img src={Dinner} alt="pic1"></img>
               <div className="title">Honeymoon Dinner for Two</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -91,7 +88,6 @@ const Registry = () => {
             >
               <img src={Bed} alt="pic1"></img>
               <div className="title">New Mattress and Bed Frame</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -102,7 +98,6 @@ const Registry = () => {
             >
               <img src={Plane} alt="pic1"></img>
               <div className="title">Honeymoon Round Trip Plane Tickets</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -113,7 +108,6 @@ const Registry = () => {
             >
               <img src={Como} alt="pic1"></img>
               <div className="title">3-Night Stay in Lake Como</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -124,7 +118,6 @@ const Registry = () => {
             >
               <img src={Rome} alt="pic1"></img>
               <div className="title">2-Night Stay in Rome</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -135,7 +128,6 @@ const Registry = () => {
             >
               <img src={Venice} alt="pic1"></img>
               <div className="title">2-Night Stay in Venice</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
           <div className="item">
@@ -146,7 +138,6 @@ const Registry = () => {
             >
               <img src={Airbb} alt="pic1"></img>
               <div className="title">Airbnb eGift Card</div>
-              <div className="location">Cash Registry</div>
             </a>
           </div>
         </div>
