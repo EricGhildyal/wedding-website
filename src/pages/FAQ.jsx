@@ -59,13 +59,13 @@ const FAQ = () => {
               {
                 label: "What will the weather be like?",
                 content:
-                  "It's Boston, so your guess is as good as ours! August generally has a high of 80°F (27°C) and a lower chance of rain.",
+                  "It's Boston, so your guess is as good as ours! August has an average high of 80°F (27°C) and a lower chance of rain.",
               },
 
               {
                 label: "What should I wear?",
                 content:
-                  "Leave the 3-piece tux or the ball gown for your average wedding, this is a Boston summer wedding!",
+                  "Leave the 3-piece tux or the ball gown for your average wedding, this is Eric and Patrick's Boston summer wedding!",
               },
               {
                 label:

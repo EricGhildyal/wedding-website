@@ -55,7 +55,6 @@ h2 {
 #rsvp-section,
 #registry-section,
 #faq-section {
-  height: 110vh;
   text-align: center;
   padding: 20px;
   padding-left: 120px;
@@ -73,8 +72,21 @@ button {
 }
 
 .copyright {
-  margin: 50px;
-  font-size: 10px;
+  margin: 35px;
+  font-size: 15px;
+}
+
+.swiper-button-disabled {
+  color: grey !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #6c0e23 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #6c0e23 !important;
 }
 
 @media only screen and (max-width: 1200px) {

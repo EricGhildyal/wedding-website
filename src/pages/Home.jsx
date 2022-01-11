@@ -45,7 +45,7 @@ const Home = () => {
       </Fade>
       <Fade right delay={100}>
         <div className="info">
-          <h2>We're getting married!</h2>
+          <h2>We're Getting Married!</h2>
           <br />
           <p>
             August 6th, 2022 <br /> Boston, MA

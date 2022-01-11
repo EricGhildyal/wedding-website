@@ -13,7 +13,9 @@ import Car from "../assets/registry/car.jpg";
 import Dinner from "../assets/registry/dinner.jpg";
 import Bed from "../assets/registry/bed.jpg";
 import Plane from "../assets/registry/plane.jpg";
-import Italy from "../assets/registry/italy.jpg";
+import Venice from "../assets/registry/venice.jpg";
+import Rome from "../assets/registry/rome.jpg";
+import Como from "../assets/registry/italy.jpg";
 import Airbb from "../assets/registry/airbb.jpg";
 
 const Registry = () => {
@@ -109,8 +111,30 @@ const Registry = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={Italy} alt="pic1"></img>
-              <div className="title">Honeymoon to Italy Fund</div>
+              <img src={Como} alt="pic1"></img>
+              <div className="title">3-Night Stay in Lake Como</div>
+              <div className="location">Cash Registry</div>
+            </a>
+          </div>
+          <div className="item">
+            <a
+              href="https://www.blueprintregistry.com/registry/eric-patrick?gift=6034567"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={Rome} alt="pic1"></img>
+              <div className="title">2-Night Stay in Rome</div>
+              <div className="location">Cash Registry</div>
+            </a>
+          </div>
+          <div className="item">
+            <a
+              href="https://www.blueprintregistry.com/registry/eric-patrick?gift=6034567"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={Venice} alt="pic1"></img>
+              <div className="title">2-Night Stay in Venice</div>
               <div className="location">Cash Registry</div>
             </a>
           </div>
@@ -125,6 +149,15 @@ const Registry = () => {
               <div className="location">Cash Registry</div>
             </a>
           </div>
+        </div>
+        <div className="btn-1">
+          <a
+            href="https://www.blueprintregistry.com/registry/eric-patrick"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>Visit Registry Website</span>
+          </a>
         </div>
       </Fade>
     </div>

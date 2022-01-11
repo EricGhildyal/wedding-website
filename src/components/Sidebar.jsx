@@ -9,8 +9,8 @@ import "../App.css";
 import "./sidebar.css";
 import MenuIcon from "../assets/menu.svg";
 import CloseIcon from "../assets/close.svg";
-import Logo from "../assets/logos/logo.svg";
-import LogoWhite from "../assets/logos/logoWhite.svg";
+import Logo from "../assets/logos/logo.png";
+import LogoWhite from "../assets/logos/logoWhite.png";
 
 const Sidebar = ({ isMobile }) => {
   // Sections
@@ -58,7 +58,10 @@ const Sidebar = ({ isMobile }) => {
                     alt="Close Menu"
                   />
                 </button>
-                <img className="logo" src={LogoWhite} alt="logo" />
+                <button onClick={introSection.onClick}>
+                  <img className="logo" src={LogoWhite} alt="logo" />
+                </button>
+
                 <button
                   onClick={() => {
                     setMobileSidebarOpen(false);

@@ -2,7 +2,7 @@
 
 #home-section {
   padding-top: 100px;
-  height: 80vh;
+  height: 100%;
   display: flex;
   align-content: center;
 }
@@ -37,19 +37,6 @@
   font-size: 80px;
 }
 
-#home-section .swiper-button-disabled {
-  color: grey;
-}
-
-#home-section .swiper-pagination-bullet-active {
-  background-color: #6c0e23;
-}
-
-#home-section .swiper-button-next,
-.swiper-button-prev {
-  color: #6c0e23;
-}
-
 @media only screen and (max-width: 1200px) {
   #home-section {
     padding-top: 80px;
@@ -79,7 +66,7 @@
 @media only screen and (max-width: 768px) {
   #home-section {
     flex-direction: column;
-    height: 110vh;
+    padding-bottom: 50px;
   }
 
   #home-section .pics {

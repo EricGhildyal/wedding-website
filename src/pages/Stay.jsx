@@ -60,7 +60,7 @@ const Stay = ({ google }) => {
                 </div>
                 <div className="title">
                   <a
-                    href="https://www.marriott.com/hotels/travel/boscd-ac-hotel-boston-downtown/"
+                    href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1639601011502&key=GRP&app=resvlink"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -69,16 +69,17 @@ const Stay = ({ google }) => {
                 </div>
                 <div className="body">
                   <ul>
-                    <li>8 min (0.4 mile) walk to the venue</li>
+                    <li>8 min walk to the venue</li>
                     <li>
                       This is our recommended hotel for those wishing to stay in
-                      the city for the night of the wedding. It is the closest
-                      hotel to the venue and is a short walk (or stumble) away.
-                      We've secured a room block and group rate, so be sure to
-                      book using the provided link if booking online or group
-                      code if booking by phone. There are plenty of nearby
-                      restaurants and it's close to one of our favorite local
-                      cafe chains, Tatte!
+                      the city for the wedding. It is the closest hotel to the
+                      venue and is a short walk (or stumble) away. We've secured
+                      a room block and group rate, so be sure to book using the
+                      provided link, if booking online, or group code, if
+                      booking by phone. There are plenty of nearby restaurants
+                      and it's close to one of our favorite local cafe chains:
+                      Tatte! Their brunch is sure to cure your hangover...not
+                      that we know from experience.
                     </li>
                     <li>
                       Group rate: $239/night before taxes and fees
@@ -118,16 +119,16 @@ const Stay = ({ google }) => {
                 </div>
                 <div className="body">
                   <ul>
-                    <li>10 min (0.5 mile) walk to the venue</li>
+                    <li>10 min walk to the venue</li>
                     <li>
                       This artsy hotel will bring out your inner hipster.
                       There's a great cafe in the lobby and a mexican restaurant
                       connected. When booking, be sure to select a room with a
                       "Bathroom in Room," otherwise you'll be back to your
-                      college days with a "Bathroom Down the Hall," unless
-                      that's the experience you're looking for. This one is a
-                      bit closer to the heart of Boston's Back Bay, while still
-                      in walking distance to the venue.
+                      college days with a "Bathroom Down the Hall." Unless
+                      that's the experience you're looking for, we won't judge.
+                      This one is a bit closer to the heart of Boston's Back
+                      Bay, while still in walking distance to the venue.
                     </li>
                   </ul>
                 </div>
@@ -149,13 +150,14 @@ const Stay = ({ google }) => {
                 </div>
                 <div className="body">
                   <ul>
-                    <li>12 minute (0.6 mile) walk to the venue</li>
+                    <li>12 minute walk to the venue</li>
                     <li>
                       Although the rooms are on the smaller side (you'll get a
                       feel of what city living is really like), this may be a
                       good alternative to the nearby Revolution Hotel. This one
                       is not far from Back Bay and in walking distance to the
-                      venue.
+                      venue. To sweeten the deal, they offer 🍍 pineapple
+                      cookies daily! #summerofthepineapple2022
                     </li>
                   </ul>
                 </div>
@@ -172,21 +174,22 @@ const Stay = ({ google }) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h2>Boston Marriott Copley Place</h2>
+                    <h2>Marriott Copley Place</h2>
                   </a>
                 </div>
                 <div className="body">
                   <ul>
-                    <li>19 minute (0.9 mile) walk to venue</li>
+                    <li>19 minute walk to venue</li>
                     <li>
                       A great choice for anyone looking to explore Boston's Back
                       Bay. This hotel is connected to the shops at the
-                      prudential center and has the option of on-site
-                      self-parking with in and out privileges. There is also an
-                      Old Town Trolley Tour Stop just outside the entrance for
-                      anyone looking to hop on a guided trolley tour. Although a
-                      bit further from the venue, it is still a safe and flat
-                      walk to Brasserie.
+                      Prudential center ("The Pru" as you'll hear it called) and
+                      has the option of on-site self-parking with in and out
+                      privileges. There is also an Old Town Trolley Tour Stop
+                      just outside the entrance for anyone looking for a hop
+                      on-hop off guided trolley tour. Although a bit further
+                      from the venue, it is still a safe and flat walk to
+                      Brasserie.
                     </li>
                   </ul>
                 </div>
@@ -203,17 +206,17 @@ const Stay = ({ google }) => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h2>The Westin Copley Place, Boston</h2>
+                    <h2>The Westin Copley Place</h2>
                   </a>
                 </div>
                 <div className="body">
                   <ul>
-                    <li>20 minute (0.9 mile) walk to venue</li>
+                    <li>20 minute walk to venue</li>
                     <li>
-                      Steps from Copley Square and Boston Public Library, this
-                      is a great option for those looking to do some sightseeing
-                      while in town. Just like the Marriott Copley Place, it is
-                      a safe and flat 20 minute walk to the venue.
+                      Steps from Copley Square, Boston Public Library, this is a
+                      great option for those looking to do more sightseeing than
+                      drinking while in town. Just like the Marriott Copley
+                      Place, it is a safe and flat 20 minute walk to the venue.
                     </li>
                   </ul>
                 </div>
@@ -240,7 +243,7 @@ const Stay = ({ google }) => {
                       For those not necessarily looking for a city view (or city
                       prices), this is a nice option just outside of the city,
                       located just next to Arsenal Yards shopping mall. We
-                      highly suggest stopping by Frank Pepe's for classic New
+                      highly suggest stopping by Frank Pepe's for a classic New
                       England "apizza"!
                     </li>
                   </ul>
