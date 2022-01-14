@@ -65,7 +65,7 @@ const FAQ = () => {
               {
                 label: "What should I wear?",
                 content:
-                  "Leave the 3-piece tux or the ball gown for your average wedding, this is Eric and Patrick's Boston summer wedding!",
+                  "Leave the 3-piece tux or ball gown for your typical wedding, this is Eric and Patrick's Boston summer wedding! We're going for a dressy-casual aesthetic, so don't worry if you \"forget\" your tie at home.",
               },
               {
                 label:
