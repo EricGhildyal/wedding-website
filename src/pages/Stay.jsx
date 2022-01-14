@@ -75,11 +75,11 @@ const Stay = ({ google }) => {
                       the city for the wedding. It is the closest hotel to the
                       venue and is a short walk (or stumble) away. We've secured
                       a room block and group rate, so be sure to book using the
-                      provided link, if booking online, or group code, if
-                      booking by phone. There are plenty of nearby restaurants
-                      and it's close to one of our favorite local cafe chains:
-                      Tatte! Their brunch is sure to cure your hangover...not
-                      that we know from experience.
+                      provided link if booking online, or group code if booking
+                      by phone. There are plenty of nearby restaurants and it's
+                      close to one of our favorite local cafe chains: Tatte!
+                      Their brunch is sure to cure your hangover...not that we
+                      know from experience.
                     </li>
                     <li>
                       Group rate: $239/night before taxes and fees
@@ -156,8 +156,10 @@ const Stay = ({ google }) => {
                       feel of what city living is really like), this may be a
                       good alternative to the nearby Revolution Hotel. This one
                       is not far from Back Bay and in walking distance to the
-                      venue. To sweeten the deal, they offer 🍍 pineapple
-                      cookies daily! #summerofthepineapple2022
+                      venue. To{" "}
+                      <span style={{ fontStyle: "italic" }}>sweeten</span> the
+                      deal, they offer pineapple cookies daily!
+                      #summerofthepineapple2022 🍍
                     </li>
                   </ul>
                 </div>
@@ -185,7 +187,7 @@ const Stay = ({ google }) => {
                       Bay. This hotel is connected to the shops at the
                       Prudential center ("The Pru" as you'll hear it called) and
                       has the option of on-site self-parking with in and out
-                      privileges. There is also an Old Town Trolley Tour Stop
+                      privileges. There is also an Old Town Trolley Tour stop
                       just outside the entrance for anyone looking for a hop
                       on-hop off guided trolley tour. Although a bit further
                       from the venue, it is still a safe and flat walk to

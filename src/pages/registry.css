@@ -11,7 +11,7 @@
   text-decoration: none;
 }
 
-#registry-section .registry-container a:hover::before {
+#registry-section .registry-container .item:hover::before {
   content: "view";
   background: #fff;
   width: 84px;
@@ -128,7 +128,7 @@ span {
     font-size: 18px;
   }
 
-  #registry-section .registry-container a:hover::before {
+  #registry-section .registry-container .item:hover::before {
     top: 30%;
     left: 30%;
   }
@@ -148,7 +148,7 @@ span {
     font-size: 15px;
   }
 
-  #registry-section .registry-container a:hover::before {
+  #registry-section .registry-container .item:hover::before {
     width: 42px;
     height: 16px;
     line-height: 16px;

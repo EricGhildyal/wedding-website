@@ -54,7 +54,7 @@ const FAQ = () => {
               {
                 label: "Is the wedding indoors or outdoors?",
                 content:
-                  "Both! The cocktail hour and ceremoney will be outside on Brasserie's umbrella-covered patio, while dinner and dancing will be inside. We have the entire restaurant for the night so you can always go back outside if you want a breath of fresh air.",
+                  "Both! The cocktail hour and ceremony will be outside on Brasserie's umbrella-covered patio, while dinner and dancing will be inside. We have the entire restaurant for the night so you can always go back outside if you want a breath of fresh air.",
               },
               {
                 label: "What will the weather be like?",

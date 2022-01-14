@@ -1,5 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+import { useScrollSection } from "react-scroll-section";
 
 // Our Imports
 import "../App.css";
@@ -29,15 +30,17 @@ const Names = () => {
 };
 
 const Intro = () => {
+  const homeSection = useScrollSection("home");
+
   return (
     <div id="intro-section">
       <div className="intro-wrapper">
         <Names />
       </div>
       <div className="chevron">
-        <a href="#home">
+        <button onClick={homeSection.onClick}>
           <img src={Chevron} alt="chevron"></img>
-        </a>
+        </button>
       </div>
 
       <Fade right>

@@ -85,6 +85,10 @@
   width: 70%;
 }
 
+#intro-section button {
+  display: initial;
+}
+
 #intro-section .chevron {
   text-align: center;
   animation-duration: 3s;
@@ -93,6 +97,7 @@
   animation-name: bounce-7;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
+
 @keyframes bounce-7 {
   0% {
     transform: scale(1, 1) translateY(0);
