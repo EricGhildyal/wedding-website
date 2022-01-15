@@ -49,7 +49,7 @@ const FAQ = () => {
               {
                 label: "When is the RSVP deadline?",
                 content:
-                  "The RSVP deadline is July 6th, 2022. The RSVP section of this website will be avilaible once we send out invitations!",
+                  "The RSVP deadline is July 6th, 2022. The RSVP section of this website will be available once we send out invitations!",
               },
               {
                 label: "Is the wedding indoors or outdoors?",
