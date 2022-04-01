@@ -3,3 +3,216 @@
 #rsvp-section {
   height: 60vh;
 }
+
+.rsvpForm {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.rsvpForm input {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.error {
+  font-size: 20px;
+  padding: 10px 0;
+  color: red;
+}
+
+.modal-content {
+  padding: 20px 40px;
+  height: 85vh;
+}
+
+.modal-content h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.modal-content h2 {
+  padding: 20px;
+}
+
+.guest-wrapper {
+  margin-top: 25px;
+  border-top: 2px solid lightgrey;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.modal-form .question {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+}
+
+.modal-form .question h3 {
+  margin-top: 0;
+}
+
+.modal-form input {
+  display: block;
+  width: 80%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  color: #000000;
+  border: 1px solid #2a3949;
+  background: #ffffff;
+  transition: border 0.3s ease;
+}
+
+.modal-form input::placeholder {
+  color: grey;
+}
+
+.modal-form input::focus {
+  outline: none;
+  color: grey;
+}
+
+.modal-form button {
+  margin: 20px;
+  outline: none;
+}
+
+.custom-btn {
+  width: 230px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #2a3949;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.next-btn {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: right;
+}
+
+.btn-3 {
+  line-height: 39px;
+  padding: 0;
+}
+.btn-3:hover {
+  background: transparent;
+  color: #2a3949;
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #2a3949;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #2a3949;
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn {
+  border: 2px solid #2a3949;
+  color: #2a3949;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.upload-btn:hover {
+  background-color: lightgrey;
+}
+
+@media only screen and (max-width: 1090px) {
+  .modal-content {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-content {
+    height: 90vh;
+    padding: 20px 0px;
+  }
+
+  .modal-content h1 {
+    font-size: 35px;
+  }
+}

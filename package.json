@@ -3,17 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@netlify/functions": "^1.0.0",
+    "@notionhq/client": "^1.0.2",
+    "axios": "^0.26.1",
+    "formik": "^2.2.9",
+    "googleapis": "^99.0.0",
+    "lambda-multipart-parser": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-maps": "^9.4.5",
+    "react-loader-spinner": "^6.0.0-0",
+    "react-responsive-modal": "^6.2.0",
     "react-reveal": "^1.2.2",
     "react-scripts": "4.0.3",
     "react-scroll-section": "^3.1.0",
+    "rodal": "^1.8.3",
     "swiper": "^7.4.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "netlify-cli": "^9.13.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -17,6 +17,7 @@ const Sidebar = ({ isMobile }) => {
   const introSection = useScrollSection("intro");
   const homeSection = useScrollSection("home");
   const whereSection = useScrollSection("where");
+  const scheduleSection = useScrollSection("schedule");
   const staySection = useScrollSection("stay");
   const rsvpSection = useScrollSection("rsvp");
   const registrySection = useScrollSection("registry");
@@ -83,6 +84,15 @@ const Sidebar = ({ isMobile }) => {
                 <button
                   onClick={() => {
                     setMobileSidebarOpen(false);
+                    scheduleSection.onClick();
+                  }}
+                  className={scheduleSection.selected ? "selected" : ""}
+                >
+                  <div>Schedule</div>
+                </button>
+                <button
+                  onClick={() => {
+                    setMobileSidebarOpen(false);
                     staySection.onClick();
                   }}
                   className={staySection.selected ? "selected" : ""}
@@ -141,6 +151,12 @@ const Sidebar = ({ isMobile }) => {
                 className={whereSection.selected ? "selected" : ""}
               >
                 <div>Where</div>
+              </button>
+              <button
+                onClick={scheduleSection.onClick}
+                className={scheduleSection.selected ? "selected" : ""}
+              >
+                <div>Schedule</div>
               </button>
               <button
                 onClick={staySection.onClick}

@@ -1,0 +1,55 @@
+#schedule-section {
+  height: 90vh;
+}
+
+#schedule-section table {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#schedule-section tr:nth-child(even) th {
+  color: #c49ea7;
+  font-weight: normal;
+}
+
+#schedule-section th {
+  width: 15%;
+  color: #6c0e23;
+}
+
+#schedule-section th,
+td {
+  padding: 0.5rem 1rem;
+}
+
+#schedule-section th {
+  font-weight: normal;
+  border-top: thin dotted #ccc;
+}
+
+#schedule-section td {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.4;
+  border-radius: 0.2rem;
+  transition: opacity 0.3s ease;
+  color: #ffffff;
+  background-color: #2a3949;
+}
+
+#schedule-section td > span {
+  font-size: 0.8em;
+  font-weight: normal;
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #schedule-section table {
+    width: 100%;
+  }
+
+  #schedule-section th {
+    width: 5%;
+  }
+}

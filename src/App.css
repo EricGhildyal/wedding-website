@@ -33,7 +33,6 @@ body {
   background-color: #fbf7ee;
   background-position: top center;
   background-size: 40%;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -51,6 +50,7 @@ h2 {
 
 #home-section,
 #where-section,
+#schedule-section,
 #stay-section,
 #rsvp-section,
 #registry-section,
@@ -62,13 +62,6 @@ h2 {
 
 .border {
   border: 1px solid #000000;
-}
-
-button {
-  display: block;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
 .copyright {
@@ -106,6 +99,7 @@ button {
 
   #home-section,
   #where-section,
+  #schedule-section,
   #stay-section,
   #rsvp-section,
   #registry-section,

@@ -9,6 +9,7 @@ import Sidebar from "./components/Sidebar.jsx";
 import Intro from "./pages/Intro.jsx";
 import Home from "./pages/Home.jsx";
 import Where from "./pages/Where";
+import Schedule from "./pages/Schedule";
 import Stay from "./pages/Stay";
 import RSVP from "./pages/RSVP";
 import Registry from "./pages/Registry";
@@ -65,6 +66,9 @@ function App() {
       </Section>
       <Section id="where">
         <Where />
+      </Section>
+      <Section id="schedule">
+        <Schedule />
       </Section>
       <Section id="stay">
         <Stay />
