@@ -293,15 +293,16 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
               closeModal();
             } else {
               setLoading(true);
+              let failOut = false;
               for (let i = 0; i < formRefs.current.length; i++) {
                 formRefs.current[i].current.submitForm();
-                console.log(formRefs.current[i].current);
                 if (!isEmpty(formRefs.current[i].current.errors)) {
                   setFormErrors(true);
                   setLoading(false);
-                  return;
+                  failOut = true;
                 }
               }
+              if (failOut) return;
               setComplete(true);
               setFormErrors(false);
               setLoading(false);

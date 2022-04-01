@@ -49,7 +49,7 @@ const FAQ = () => {
               {
                 label: "When is the RSVP deadline?",
                 content:
-                  "The RSVP deadline is July 6th, 2022. The RSVP section of this website will be available once we send out invitations!",
+                  'The RSVP deadline is July 6th, 2022. You can RSVP right now under the "RSVP" section of this website!',
               },
               {
                 label: "Is the wedding indoors or outdoors?",
@@ -61,7 +61,6 @@ const FAQ = () => {
                 content:
                   "It's Boston, so your guess is as good as ours! August has an average high of 80°F (27°C) and a lower chance of rain.",
               },
-
               {
                 label: "What should I wear?",
                 content:

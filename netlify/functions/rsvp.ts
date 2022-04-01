@@ -134,7 +134,6 @@ async function getFileURL(file, guestID) {
         client_email: GOOGLE_CLIENT_EMAIL,
         private_key: GOOGLE_PRIVATE_KEY.split("\\n").join("\n"),
       },
-      // keyFile: "./netlify/functions/wedding-website-337121-8b0eb8cdd0fb.json",
       scopes: "https://www.googleapis.com/auth/drive.file",
     });
 
