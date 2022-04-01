@@ -30165,10 +30165,10 @@ var require_src7 = __commonJS({
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getPem = void 0;
-    var fs2 = require("fs");
+    var fs = require("fs");
     var forge = require_lib4();
     var util_1 = require("util");
-    var readFile = util_1.promisify(fs2.readFile);
+    var readFile = util_1.promisify(fs.readFile);
     function getPem(filename, callback) {
       if (callback) {
         getPemAsync(filename).then((pem) => callback(null, pem)).catch((err) => callback(err, null));
@@ -30204,12 +30204,12 @@ var require_src8 = __commonJS({
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.GoogleToken = void 0;
-    var fs2 = require("fs");
+    var fs = require("fs");
     var gaxios_1 = require_src5();
     var jws = require_jws();
     var path = require("path");
     var util_1 = require("util");
-    var readFile = fs2.readFile ? util_1.promisify(fs2.readFile) : async () => {
+    var readFile = fs.readFile ? util_1.promisify(fs.readFile) : async () => {
       throw new ErrorWithCode("use key rather than keyFile.", "MISSING_CREDENTIALS");
     };
     var GOOGLE_TOKEN_URL = "https://www.googleapis.com/oauth2/v4/token";
@@ -31901,14 +31901,14 @@ var require_identitypoolclient = __commonJS({
     var _c;
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.IdentityPoolClient = void 0;
-    var fs2 = require("fs");
+    var fs = require("fs");
     var util_1 = require("util");
     var baseexternalclient_1 = require_baseexternalclient();
-    var readFile = util_1.promisify((_a = fs2.readFile) !== null && _a !== void 0 ? _a : () => {
+    var readFile = util_1.promisify((_a = fs.readFile) !== null && _a !== void 0 ? _a : () => {
     });
-    var realpath = util_1.promisify((_b = fs2.realpath) !== null && _b !== void 0 ? _b : () => {
+    var realpath = util_1.promisify((_b = fs.realpath) !== null && _b !== void 0 ? _b : () => {
     });
-    var lstat = util_1.promisify((_c = fs2.lstat) !== null && _c !== void 0 ? _c : () => {
+    var lstat = util_1.promisify((_c = fs.lstat) !== null && _c !== void 0 ? _c : () => {
     });
     var IdentityPoolClient = class extends baseexternalclient_1.BaseExternalAccountClient {
       constructor(options, additionalOptions) {
@@ -32258,7 +32258,7 @@ var require_googleauth = __commonJS({
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.GoogleAuth = exports.CLOUD_SDK_CLIENT_ID = void 0;
     var child_process_1 = require("child_process");
-    var fs2 = require("fs");
+    var fs = require("fs");
     var gcpMetadata = require_src6();
     var os = require("os");
     var path = require("path");
@@ -32416,7 +32416,7 @@ var require_googleauth = __commonJS({
         }
         if (location) {
           location = path.join(location, "gcloud", "application_default_credentials.json");
-          if (!fs2.existsSync(location)) {
+          if (!fs.existsSync(location)) {
             location = null;
           }
         }
@@ -32431,8 +32431,8 @@ var require_googleauth = __commonJS({
           throw new Error("The file path is invalid.");
         }
         try {
-          filePath = fs2.realpathSync(filePath);
-          if (!fs2.lstatSync(filePath).isFile()) {
+          filePath = fs.realpathSync(filePath);
+          if (!fs.lstatSync(filePath).isFile()) {
             throw new Error();
           }
         } catch (err) {
@@ -32441,7 +32441,7 @@ var require_googleauth = __commonJS({
           }
           throw err;
         }
-        const readStream = fs2.createReadStream(filePath);
+        const readStream = fs.createReadStream(filePath);
         return this.fromStream(readStream, options);
       }
       fromJSON(json, options) {
@@ -32627,7 +32627,7 @@ var require_googleauth = __commonJS({
             this._cacheClientFromJSON(this.jsonContent, this.clientOptions);
           } else if (this.keyFilename) {
             const filePath = path.resolve(this.keyFilename);
-            const stream = fs2.createReadStream(filePath);
+            const stream = fs.createReadStream(filePath);
             await this.fromStreamAsync(stream, this.clientOptions);
           } else {
             await this.getApplicationDefaultAsync(this.clientOptions);
@@ -35977,13 +35977,13 @@ var require_discovery = __commonJS({
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Discovery = void 0;
-    var fs2 = require("fs");
+    var fs = require("fs");
     var google_auth_library_1 = require_src9();
     var resolve = require("url");
     var util = require("util");
     var apirequest_1 = require_apirequest();
     var endpoint_1 = require_endpoint();
-    var readFile = util.promisify(fs2.readFile);
+    var readFile = util.promisify(fs.readFile);
     var Discovery = class {
       constructor(options) {
         this.transporter = new google_auth_library_1.DefaultTransporter();
@@ -440224,7 +440224,7 @@ var require_urlencoded = __commonJS({
 // node_modules/busboy/lib/main.js
 var require_main = __commonJS({
   "node_modules/busboy/lib/main.js"(exports, module2) {
-    var fs2 = require("fs");
+    var fs = require("fs");
     var WritableStream = require("stream").Writable;
     var inherits = require("util").inherits;
     var parseParams = require_utils3().parseParams;
@@ -440359,8 +440359,13 @@ var import_client = __toModule(require_src());
 var import_googleapis = __toModule(require_src12());
 var { Duplex } = require("stream");
 var parser = require_lambda_multipart_parser();
-var fs = require("fs");
-var { NOTION_TOKEN, NOTION_DB_ID, DRIVE_FOLDER_ID } = process.env;
+var {
+  NOTION_TOKEN,
+  NOTION_DB_ID,
+  DRIVE_FOLDER_ID,
+  GOOGLE_CLIENT_EMAIL,
+  GOOGLE_PRIVATE_KEY
+} = process.env;
 var handler = async (event, context) => {
   const notion = new import_client.Client({
     auth: NOTION_TOKEN
@@ -440460,7 +440465,10 @@ function bufferToStream(myBuffer) {
 async function getFileURL(file, guestID) {
   try {
     const client = new import_googleapis.google.auth.GoogleAuth({
-      keyFile: "./netlify/functions/wedding-website-337121-8b0eb8cdd0fb.json",
+      credentials: {
+        client_email: GOOGLE_CLIENT_EMAIL,
+        private_key: GOOGLE_PRIVATE_KEY.split("\\n").join("\n")
+      },
       scopes: "https://www.googleapis.com/auth/drive.file"
     });
     const drive = await import_googleapis.google.drive({

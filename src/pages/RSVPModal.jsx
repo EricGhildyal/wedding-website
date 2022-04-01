@@ -1,17 +1,16 @@
-import React, { useState, useRef, createRef, useEffect } from "react";
+import React, { useState, useRef, createRef } from "react";
 
 // 3rd party imports
 import axios from "axios";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { ThreeDots } from "react-loader-spinner";
-import { isEmpty, remove } from "lodash";
+import { isEmpty } from "lodash";
 
 // Our Imports
 import "../App.css";
 import "./rsvp.css";
 import ButtonGroup from "../components/buttonGroup";
-import { makeConsoleLogger } from "@notionhq/client/build/src/logging";
 
 const rsvpSchema = Yup.object().shape({
   fname: Yup.string()

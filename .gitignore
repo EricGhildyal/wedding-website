@@ -105,6 +105,6 @@ dist
 
 .secrets/
 
-netlify/functions
+!netlify/functions/*.json
 
 build/

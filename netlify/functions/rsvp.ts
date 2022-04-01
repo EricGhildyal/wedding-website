@@ -5,10 +5,15 @@ import { Handler } from "@netlify/functions";
 const { Duplex } = require("stream");
 
 const parser = require("lambda-multipart-parser");
-const fs = require("fs");
 
 // Env Vars
-const { NOTION_TOKEN, NOTION_DB_ID, DRIVE_FOLDER_ID } = process.env;
+const {
+  NOTION_TOKEN,
+  NOTION_DB_ID,
+  DRIVE_FOLDER_ID,
+  GOOGLE_CLIENT_EMAIL,
+  GOOGLE_PRIVATE_KEY,
+} = process.env;
 
 const handler: Handler = async (event, context) => {
   // Initializing a notion client
@@ -125,7 +130,11 @@ function bufferToStream(myBuffer) {
 async function getFileURL(file, guestID) {
   try {
     const client = new google.auth.GoogleAuth({
-      keyFile: "./netlify/functions/wedding-website-337121-8b0eb8cdd0fb.json",
+      credentials: {
+        client_email: GOOGLE_CLIENT_EMAIL,
+        private_key: GOOGLE_PRIVATE_KEY.split("\\n").join("\n"),
+      },
+      // keyFile: "./netlify/functions/wedding-website-337121-8b0eb8cdd0fb.json",
       scopes: "https://www.googleapis.com/auth/drive.file",
     });
 
