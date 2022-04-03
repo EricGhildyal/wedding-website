@@ -13,14 +13,22 @@ import "./rsvp.css";
 import ButtonGroup from "../components/buttonGroup";
 
 const rsvpSchema = Yup.object().shape({
-  fname: Yup.string()
-    .min(1, "Enter at least 1 characters")
-    .required("First Name Required")
-    .typeError("First Name Required"),
-  lname: Yup.string()
-    .min(1, "Enter at least 1 characters")
-    .required("Last Name Required")
-    .typeError("Last Name Required"),
+  fname: Yup.string().when("rsvp", {
+    is: "Yes",
+    then: Yup.string()
+      .min(1, "Enter at least 1 character")
+      .required("First Name Required")
+      .typeError("First Name Required"),
+    otherwise: Yup.string().nullable(),
+  }),
+  lname: Yup.string().when("rsvp", {
+    is: "Yes",
+    then: Yup.string()
+      .min(1, "Enter at least 1 character")
+      .required("First Name Required")
+      .typeError("First Name Required"),
+    otherwise: Yup.string().nullable(),
+  }),
   rsvp: Yup.string().required("RSVP to Wedding Required"),
   welcomeReception: Yup.string()
     .required("RSVP to Reception Required")
@@ -96,6 +104,9 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
                     guestID: guest.id,
                   }}
                   onSubmit={(values, actions) => {
+                    if (values.fname === "" || values.fname === " ") {
+                      values.fname = "Guest";
+                    }
                     try {
                       const formData = new FormData();
                       // Hacky trick to handle getting a new vaccination card
