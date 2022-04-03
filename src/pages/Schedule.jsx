@@ -31,8 +31,8 @@ const Schedule = () => {
                 <td colspan="4" rowspan="8">
                   Welcome Reception
                   <br />
-                  <br />
-                  🍸 🍗 🍺 🍽️
+                  <span style={{ fontSize: 15 }}>Dinner & Drinks</span>
+                  🍸 🍽️ 🍺 🍝
                 </td>
               </tr>
               <tr>
@@ -73,26 +73,20 @@ const Schedule = () => {
             <table>
               <tr>
                 <th>5:00</th>
-                <td colspan="4" rowspan="1">
-                  Welcome Drinks <br /> 🍸 🍺
+                <td colspan="4" rowspan="3">
+                  Ceremony & Cokctail Hour <br /> 👨‍❤️‍👨 🍸 💍 🍺
                 </td>
               </tr>
               <tr>
                 <th>5:30</th>
-                <td colspan="4">
-                  Ceremony <br /> 👨‍❤️‍👨 💍
-                </td>
               </tr>
               <tr>
                 <th>6:00</th>
-                <td colspan="4" rowspan="1">
-                  Reception <br /> 🍺 🍷
-                </td>
               </tr>
               <tr>
                 <th>6:30</th>
-                <td colspan="4" rowspan="4">
-                  Seated Dinner <br /> 🍽️ 🍗
+                <td colspan="4" rowspan="9">
+                  Dinner, Drinks & Dancing <br /> 🍽️ 🕺🏽 🍝 💃
                 </td>
               </tr>
               <tr>
@@ -106,9 +100,6 @@ const Schedule = () => {
               </tr>
               <tr>
                 <th>8:30</th>
-                <td colspan="4" rowspan="5">
-                  Dancing <br /> 🕺🏽 💃
-                </td>
               </tr>
               <tr>
                 <th>9:00</th>

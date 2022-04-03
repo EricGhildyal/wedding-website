@@ -19,19 +19,25 @@ const FAQ = () => {
                 label: "Do I need to be vaccinated to attend?",
                 content: (
                   <div style={{ margin: 0 }}>
-                    YES, the City of Boston has implemented a vaccine
-                    requirement for indoor dining. Everyone 5 years of age and
-                    older must present proof of full vaccination to enter the
-                    venue.
+                    YES, to ensure our family and friends can celebrate safely,
+                    we are requiring all adults to be vaccinated to attend. The
+                    City of Boston implemented a vaccine requirement for
+                    everyone 5 years of age and older at the start of 2022.
+                    While the citywide mandate has since been lifted, the future
+                    of the pandemic is uncertain, and this mandate may be
+                    reinstated in the future. To prepare for this, we are asking
+                    all adults to upload proof of vaccination with their RSVP.
+                    <br />
                     <br />
                     <a
                       target="_blank"
                       rel="noreferrer"
                       href="https://www.boston.gov/departments/mayors-office/introducing-b-together"
-                      style={{ color: "#fff" }}
+                      style={{ color: "#fff", textDecoration: "underline" }}
                     >
                       Click here for more details
                     </a>
+                    <br />
                     <br />
                     Acceptable proof of vaccination:
                     <ul>

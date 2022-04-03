@@ -12,12 +12,14 @@
   margin-bottom: 20px;
 }
 
-.table-1 {
-  width: 40%;
+.table-1,
+.table-2 {
+  width: 50%;
 }
 
-.table-2 {
-  width: 60%;
+.table-1,
+.table-2 p {
+  font-size: 20px;
 }
 
 #schedule-section table {
@@ -64,7 +66,7 @@ td {
 
 @media only screen and (max-width: 768px) {
   #schedule-section {
-    height: 1250px;
+    height: 1350px;
   }
 
   #schedule-section table {
@@ -76,11 +78,7 @@ td {
   }
 
   #schedule-section td {
-    font-size: 15px;
-  }
-
-  .table-wrapper h2 {
-    font-size: 25px;
+    font-size: 18px;
   }
 
   .table-wrapper {

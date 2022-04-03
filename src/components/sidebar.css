@@ -27,6 +27,7 @@
   margin-top: 70px;
   width: 0;
   height: 0;
+  text-align: center;
 }
 
 .sidebar .links button {
@@ -43,6 +44,7 @@
 .sidebar .links div {
   position: absolute;
   top: 35px;
+  font-family: "EngraversGothic", "Roboto", sans-serif;
 }
 
 .sidebar .links div:before {
