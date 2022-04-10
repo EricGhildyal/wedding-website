@@ -86,6 +86,12 @@ async function handle_get(event: any, context: any, notion: Client) {
           contains: groupName,
         },
       },
+      sorts: [
+        {
+          property: "First Name",
+          direction: "ascending",
+        },
+      ],
     });
     // Handle "group not found"
     if (groupRes.results && groupRes.results.length === 0) {
@@ -99,10 +105,28 @@ async function handle_get(event: any, context: any, notion: Client) {
         },
       };
     }
+    let response = groupRes.results.map((guest) => {
+      return {
+        fname: guest.properties["First Name"].rich_text[0].plain_text || null,
+        lname: guest.properties["Last Name"].rich_text[0]?.plain_text || null, // Special question mark since unknown guests don't have a lname
+        // Create a title for this guest. Either "fname lname" or just "fname" for unknown guests
+        title: guest.properties["First Name"].rich_text[0].plain_text
+          .toLowerCase()
+          .includes("guest")
+          ? guest.properties["First Name"].rich_text[0].plain_text
+          : `${guest.properties["First Name"].rich_text[0].plain_text} ${guest.properties["Last Name"].rich_text[0].plain_text}`,
+        rsvp: guest.properties["RSVP Status"].select?.name || null,
+        welcomeReception:
+          guest.properties["Welcome Reception Status"].select?.name || null,
+        vaccineCard: guest.properties["Vaccine Card"].url || null,
+        id: guest.id,
+        groupName: guest.properties.Group.title[0].plain_text || null,
+      };
+    });
     // Lets return all guests in the group
     return {
       statusCode: 200,
-      body: JSON.stringify({ group: groupRes.results }),
+      body: JSON.stringify({ group: response }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -127,7 +151,7 @@ function bufferToStream(myBuffer) {
   return tmp;
 }
 
-async function getFileURL(file, guestID) {
+async function getFileURL(file, guestFName, guestLName) {
   try {
     const client = new google.auth.GoogleAuth({
       credentials: {
@@ -144,7 +168,7 @@ async function getFileURL(file, guestID) {
 
     const fileUploadRes = await drive.files.create({
       requestBody: {
-        name: `${guestID}_vaccine_card.pdf`,
+        name: `${guestFName}_${guestLName}_vaccine_card_${new Date().toISOString()}.pdf`,
         mimeType: file.contentType,
         parents: [DRIVE_FOLDER_ID],
       },
@@ -184,12 +208,12 @@ async function handle_put(event: any, context: any, notion: Client) {
   let file_url = params.vaccineCard;
   // Do we have a file to upload?
   if (res.files.length !== 0) {
-    file_url = await getFileURL(res.files[0], params.guestID);
+    file_url = await getFileURL(res.files[0], params.fname, params.lname);
   }
 
   try {
     const updateRes = await notion.pages.update({
-      page_id: params.guestID,
+      page_id: params.id,
       properties: {
         "RSVP Complete": {
           checkbox: true,
@@ -217,7 +241,7 @@ async function handle_put(event: any, context: any, notion: Client) {
           rich_text: [
             {
               text: {
-                content: params.lname,
+                content: params.lname || "",
               },
             },
           ],

@@ -440425,7 +440425,13 @@ async function handle_get(event, context, notion) {
         title: {
           contains: groupName
         }
-      }
+      },
+      sorts: [
+        {
+          property: "First Name",
+          direction: "ascending"
+        }
+      ]
     });
     if (groupRes.results && groupRes.results.length === 0) {
       return {
@@ -440438,9 +440444,22 @@ async function handle_get(event, context, notion) {
         }
       };
     }
+    let response = groupRes.results.map((guest) => {
+      var _a, _b, _c;
+      return {
+        fname: guest.properties["First Name"].rich_text[0].plain_text || null,
+        lname: ((_a = guest.properties["Last Name"].rich_text[0]) == null ? void 0 : _a.plain_text) || null,
+        title: guest.properties["First Name"].rich_text[0].plain_text.toLowerCase().includes("guest") ? guest.properties["First Name"].rich_text[0].plain_text : `${guest.properties["First Name"].rich_text[0].plain_text} ${guest.properties["Last Name"].rich_text[0].plain_text}`,
+        rsvp: ((_b = guest.properties["RSVP Status"].select) == null ? void 0 : _b.name) || null,
+        welcomeReception: ((_c = guest.properties["Welcome Reception Status"].select) == null ? void 0 : _c.name) || null,
+        vaccineCard: guest.properties["Vaccine Card"].url || null,
+        id: guest.id,
+        groupName: guest.properties.Group.title[0].plain_text || null
+      };
+    });
     return {
       statusCode: 200,
-      body: JSON.stringify({ group: groupRes.results }),
+      body: JSON.stringify({ group: response }),
       headers: {
         "Content-Type": "application/json"
       }
@@ -440462,7 +440481,7 @@ function bufferToStream(myBuffer) {
   tmp.push(null);
   return tmp;
 }
-async function getFileURL(file, guestID) {
+async function getFileURL(file, guestFName, guestLName) {
   try {
     const client = new import_googleapis.google.auth.GoogleAuth({
       credentials: {
@@ -440477,7 +440496,7 @@ async function getFileURL(file, guestID) {
     });
     const fileUploadRes = await drive.files.create({
       requestBody: {
-        name: `${guestID}_vaccine_card.pdf`,
+        name: `${guestFName}_${guestLName}_vaccine_card_${new Date().toISOString()}.pdf`,
         mimeType: file.contentType,
         parents: [DRIVE_FOLDER_ID]
       },
@@ -440511,11 +440530,11 @@ async function handle_put(event, context, notion) {
   let params = JSON.parse(res.data);
   let file_url = params.vaccineCard;
   if (res.files.length !== 0) {
-    file_url = await getFileURL(res.files[0], params.guestID);
+    file_url = await getFileURL(res.files[0], params.fname, params.lname);
   }
   try {
     const updateRes = await notion.pages.update({
-      page_id: params.guestID,
+      page_id: params.id,
       properties: {
         "RSVP Complete": {
           checkbox: true
@@ -440543,7 +440562,7 @@ async function handle_put(event, context, notion) {
           rich_text: [
             {
               text: {
-                content: params.lname
+                content: params.lname || ""
               }
             }
           ]

@@ -96,6 +96,8 @@
   transform-origin: bottom;
   animation-name: bounce-7;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  width: 80%;
+  margin: 0 auto;
 }
 
 #intro-section button {

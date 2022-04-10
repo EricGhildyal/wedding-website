@@ -1,6 +1,6 @@
 /* Where */
 #where-section {
-  height: 120vh;
+  height: 1150px;
 }
 
 #where-section .wrapper {
@@ -74,7 +74,7 @@
 
 @media only screen and (max-width: 1200px) {
   #where-section {
-    height: 150vh;
+    height: 1550px;
   }
 
   #where-section .wrapper {
@@ -126,7 +126,7 @@
 
 @media only screen and (max-width: 768px) {
   #where-section {
-    height: 150vh;
+    height: 1150px;
   }
 
   #where-section .wrapper {

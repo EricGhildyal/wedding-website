@@ -109,6 +109,7 @@ const RSVP = () => {
                 actions.setSubmitting(false);
               })
               .catch((err) => {
+                console.log("Error opening RSVP:");
                 console.log(err);
                 actions.setSubmitting(false);
               });
@@ -148,7 +149,7 @@ const RSVP = () => {
                 ) : null}
               </div>
               <br />
-              <button type="submit" class="custom-btn btn-3">
+              <button type="submit" className="custom-btn btn-3">
                 <span>Search for RSVP</span>
               </button>
               {isSubmitting && (
