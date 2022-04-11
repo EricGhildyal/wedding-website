@@ -120,16 +120,19 @@
   line-height: 39px;
   padding: 0;
 }
+
 .btn-3:hover {
   background: transparent;
   color: #2a3949;
 }
+
 .btn-3 span {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .btn-3:before,
 .btn-3:after {
   position: absolute;
@@ -139,20 +142,25 @@
   background: #2a3949;
   transition: all 0.3s ease;
 }
+
 .btn-3:before {
   height: 0%;
   width: 2px;
 }
+
 .btn-3:after {
   width: 0%;
   height: 2px;
 }
+
 .btn-3:hover:before {
   height: 100%;
 }
+
 .btn-3:hover:after {
   width: 100%;
 }
+
 .btn-3 span:before,
 .btn-3 span:after {
   position: absolute;
@@ -162,17 +170,21 @@
   background: #2a3949;
   transition: all 0.3s ease;
 }
+
 .btn-3 span:before {
   width: 2px;
   height: 0%;
 }
+
 .btn-3 span:after {
   width: 0%;
   height: 2px;
 }
+
 .btn-3 span:hover:before {
   height: 100%;
 }
+
 .btn-3 span:hover:after {
   width: 100%;
 }
@@ -202,6 +214,21 @@
 @media only screen and (max-width: 1090px) {
   .modal-content {
     padding: 10px;
+  }
+
+  .btn-3:before {
+    height: 100%;
+  }
+
+  .btn-3:after {
+    width: 100%;
+  }
+  .btn-3 span:before {
+    height: 100%;
+  }
+
+  .btn-3 span:after {
+    width: 100%;
   }
 }
 

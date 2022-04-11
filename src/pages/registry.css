@@ -72,7 +72,7 @@
   display: inline-block;
 }
 
-span {
+#registry-section span {
   position: relative;
   /* z-index coz when we put bg to before and after this span text will not be visible */
   z-index: 3;
