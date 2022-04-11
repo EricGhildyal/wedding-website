@@ -137,8 +137,8 @@
 .btn-3:after {
   position: absolute;
   content: "";
-  left: 0;
-  top: 0;
+  right: 0;
+  bottom: 0;
   background: #2a3949;
   transition: all 0.3s ease;
 }
@@ -161,7 +161,7 @@
   width: 100%;
 }
 
-.btn-3 span:before,
+/* .btn-3 span:before,
 .btn-3 span:after {
   position: absolute;
   content: "";
@@ -187,7 +187,7 @@
 
 .btn-3 span:hover:after {
   width: 100%;
-}
+} */
 
 .upload-btn-wrapper {
   position: relative;
@@ -214,21 +214,6 @@
 @media only screen and (max-width: 1090px) {
   .modal-content {
     padding: 10px;
-  }
-
-  .btn-3:before {
-    height: 100%;
-  }
-
-  .btn-3:after {
-    width: 100%;
-  }
-  .btn-3 span:before {
-    height: 100%;
-  }
-
-  .btn-3 span:after {
-    width: 100%;
   }
 }
 
