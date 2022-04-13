@@ -48,16 +48,20 @@ const rsvpSchema = Yup.object().shape({
   group: Yup.array().of(guestSchema),
 });
 
-const RSVPModal = ({ group, closeModal, updateGroup }) => {
+const RSVPModal = ({ group, updateGroup }) => {
   const [complete, setComplete] = useState(false);
   const [loading, setLoading] = useState(false);
 
   return (
     <div className="modal-content">
-      {loading && <ThreeDots color="#6c0e23" height={80} width={80} />}
       {complete && (
         <div style={{ fontSize: 20 }}>
-          <h1>Thanks for submitting your RSVP, {group[0].groupName}!</h1>
+          <h1>
+            {loading
+              ? "Submitting your RSVP(s)..."
+              : `Thanks for submitting your RSVP, ${group[0].groupName}!`}
+          </h1>
+          {loading && <ThreeDots color="#6c0e23" height={80} width={80} />}
           <br />
           <p>Here's what you submitted:</p>
           {group.map((guest) => {
@@ -88,7 +92,6 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
               group: group,
             }}
             onSubmit={(values, actions) => {
-              let backendErrors = false;
               setLoading(true);
               for (let idx in values.group) {
                 let guest = values.group[idx];
@@ -121,8 +124,14 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
                   })
                   .then((res) => {
                     if (res.status === 200) {
-                      if (!guest.fname.toLowerCase().includes("guest"))
+                      if (!guest.fname.toLowerCase().includes("guest")) {
                         updateGroup(guest.fname, guest.lname);
+                      }
+                      if (parseInt(idx) === parseInt(values.group.length - 1)) {
+                        setLoading(false);
+                        actions.setStatus(true);
+                        setComplete(true);
+                      }
                     }
                   })
                   // eslint-disable-next-line no-loop-func
@@ -132,17 +141,8 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
                     );
                     console.log(err);
                     actions.setSubmitting(false);
-                    backendErrors = true;
+                    setLoading(false);
                   });
-                if (
-                  parseInt(idx) === parseInt(values.group.length - 1) &&
-                  !backendErrors
-                ) {
-                  actions.setSubmitting(false);
-                  setLoading(false);
-                  actions.setStatus(true);
-                  setComplete(true);
-                }
               }
             }}
             validationSchema={rsvpSchema}
@@ -151,7 +151,6 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
               values,
               errors,
               touched,
-              isSubmitting,
               status,
               setFieldValue,
               setTouched,
@@ -362,6 +361,9 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
                     please try again in a minute!
                   </div>
                 )}
+                {loading && (
+                  <ThreeDots color="#6c0e23" height={80} width={80} />
+                )}
                 <button
                   className="custom-btn btn-3"
                   type="submit"
@@ -369,9 +371,6 @@ const RSVPModal = ({ group, closeModal, updateGroup }) => {
                 >
                   <span>Submit RSVPs</span>
                 </button>
-                {isSubmitting && (
-                  <ThreeDots color="#6c0e23" height={80} width={80} />
-                )}
               </Form>
             )}
           </Formik>

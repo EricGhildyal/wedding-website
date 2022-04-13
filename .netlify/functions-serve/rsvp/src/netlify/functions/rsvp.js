@@ -440385,9 +440385,11 @@ var handler = async (event, context) => {
 async function handle_get(event, context, notion) {
   let fname = event.queryStringParameters.fname;
   let lname = event.queryStringParameters.lname;
+  console.log(`GET Request for ${fname} ${lname}`);
   if (fname === void 0 || lname === void 0) {
+    console.log("Returning 400...");
     return {
-      statusCode: 404,
+      statusCode: 400,
       body: JSON.stringify({
         message: "Missing required params: fname or lname"
       }),
@@ -440407,6 +440409,7 @@ async function handle_get(event, context, notion) {
       }
     });
     if (guestRes.results && guestRes.results.length === 0) {
+      console.log("Returning 404...");
       return {
         statusCode: 404,
         body: JSON.stringify({
@@ -440434,6 +440437,7 @@ async function handle_get(event, context, notion) {
       ]
     });
     if (groupRes.results && groupRes.results.length === 0) {
+      console.log("Returning 404...");
       return {
         statusCode: 404,
         body: JSON.stringify({
@@ -440457,6 +440461,7 @@ async function handle_get(event, context, notion) {
         groupName: guest.properties.Group.title[0].plain_text || null
       };
     });
+    console.log("Returning 200!");
     return {
       statusCode: 200,
       body: JSON.stringify({ group: response }),
@@ -440467,6 +440472,7 @@ async function handle_get(event, context, notion) {
   } catch (error) {
     console.log(`Notion error: ${error}`);
   }
+  console.log("Returning 400...");
   return {
     statusCode: 400,
     body: JSON.stringify({ message: "There was an error" }),
@@ -440528,6 +440534,7 @@ async function getFileURL(file, guestFName, guestLName) {
 async function handle_put(event, context, notion) {
   const res = await parser.parse(event);
   let params = JSON.parse(res.data);
+  console.log(`PUT Request for ${params.fname} ${params.lname}!`);
   let file_url = params.vaccineCard;
   if (res.files.length !== 0) {
     file_url = await getFileURL(res.files[0], params.fname, params.lname);
@@ -440573,6 +440580,7 @@ async function handle_put(event, context, notion) {
       }
     });
     if (!!updateRes.id) {
+      console.log("Returning 200!");
       return {
         statusCode: 200,
         body: JSON.stringify({ message: "RSVP Saved" }),
@@ -440581,10 +440589,12 @@ async function handle_put(event, context, notion) {
         }
       };
     } else {
+      console.log("Returning 400...");
       console.log("Notion update failed:");
       console.log(updateRes);
     }
   } catch (err) {
+    console.log("Returning 400...");
     console.log("Notion update failed:");
     console.log(err);
     return {
@@ -440596,6 +440606,7 @@ async function handle_put(event, context, notion) {
     };
   }
   console.log("uhhhhhhhhhhhhhhh, we're here....?");
+  console.log("Returning 400...");
   return {
     statusCode: 400,
     body: JSON.stringify({ message: "An Error Ocurred" }),
