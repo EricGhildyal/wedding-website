@@ -37,10 +37,12 @@ const handler: Handler = async (event, context) => {
 async function handle_get(event: any, context: any, notion: Client) {
   let fname: string = event.queryStringParameters.fname;
   let lname: string = event.queryStringParameters.lname;
+  console.log(`GET Request for ${fname} ${lname}`);
   // Check if we're missing data
   if (fname === undefined || lname === undefined) {
+    console.log("Returning 400...");
     return {
-      statusCode: 404,
+      statusCode: 400,
       body: JSON.stringify({
         message: "Missing required params: fname or lname",
       }),
@@ -63,6 +65,7 @@ async function handle_get(event: any, context: any, notion: Client) {
     });
     // Handle "guest not found"
     if (guestRes.results && guestRes.results.length === 0) {
+      console.log("Returning 404...");
       return {
         statusCode: 404,
         body: JSON.stringify({
@@ -95,6 +98,7 @@ async function handle_get(event: any, context: any, notion: Client) {
     });
     // Handle "group not found"
     if (groupRes.results && groupRes.results.length === 0) {
+      console.log("Returning 404...");
       return {
         statusCode: 404,
         body: JSON.stringify({
@@ -124,6 +128,7 @@ async function handle_get(event: any, context: any, notion: Client) {
       };
     });
     // Lets return all guests in the group
+    console.log("Returning 200!");
     return {
       statusCode: 200,
       body: JSON.stringify({ group: response }),
@@ -134,7 +139,7 @@ async function handle_get(event: any, context: any, notion: Client) {
   } catch (error) {
     console.log(`Notion error: ${error}`);
   }
-
+  console.log("Returning 400...");
   return {
     statusCode: 400,
     body: JSON.stringify({ message: "There was an error" }),
@@ -204,7 +209,7 @@ async function handle_put(event: any, context: any, notion: Client) {
   //   Get this guest from the Notion DB, return an error if they don't exist
   const res = await parser.parse(event);
   let params = JSON.parse(res.data);
-
+  console.log(`PUT Request for ${params.fname} ${params.lname}!`);
   let file_url = params.vaccineCard;
   // Do we have a file to upload?
   if (res.files.length !== 0) {
@@ -253,6 +258,7 @@ async function handle_put(event: any, context: any, notion: Client) {
     });
     //if we have an ID, it's a success...I guess
     if (!!updateRes.id) {
+      console.log("Returning 200!");
       return {
         statusCode: 200,
         body: JSON.stringify({ message: "RSVP Saved" }),
@@ -261,10 +267,12 @@ async function handle_put(event: any, context: any, notion: Client) {
         },
       };
     } else {
+      console.log("Returning 400...");
       console.log("Notion update failed:");
       console.log(updateRes);
     }
   } catch (err) {
+    console.log("Returning 400...");
     console.log("Notion update failed:");
     console.log(err);
 
@@ -277,6 +285,7 @@ async function handle_put(event: any, context: any, notion: Client) {
     };
   }
   console.log("uhhhhhhhhhhhhhhh, we're here....?");
+  console.log("Returning 400...");
   return {
     statusCode: 400,
     body: JSON.stringify({ message: "An Error Ocurred" }),
