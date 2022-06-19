@@ -74,7 +74,7 @@ const Schedule = () => {
               <tr>
                 <th>5:00</th>
                 <td colSpan="4" rowSpan="3">
-                  Ceremony & Cokctail Hour <br /> 👨‍❤️‍👨 🍸 💍 🍺
+                  Ceremony & Cocktail Hour <br /> 👨‍❤️‍👨 🍸 💍 🍺
                 </td>
               </tr>
               <tr>

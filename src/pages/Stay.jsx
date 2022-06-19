@@ -110,7 +110,7 @@ const Stay = ({ google }) => {
                 </div>
                 <div className="title">
                   <a
-                    href="https://www.provenancehotels.com/the-revolution-hotel"
+                    href="https://therevolutionhotel.com/"
                     target="_blank"
                     rel="noreferrer"
                   >
