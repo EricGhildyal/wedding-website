@@ -11,8 +11,9 @@ import Home from "./pages/Home.jsx";
 import Where from "./pages/Where";
 import Schedule from "./pages/Schedule";
 import Stay from "./pages/Stay";
-import RSVP from "./pages/RSVP";
-import Registry from "./pages/Registry";
+import Pics from "./pages/Pics";
+// import RSVP from "./pages/RSVP";
+// import Registry from "./pages/Registry";
 import FAQ from "./pages/FAQ";
 
 function App() {
@@ -64,6 +65,9 @@ function App() {
         <div ref={homeRef} />
         <Home />
       </Section>
+      <Section id="pics">
+        <Pics />
+      </Section>
       <Section id="where">
         <Where />
       </Section>
@@ -73,12 +77,12 @@ function App() {
       <Section id="stay">
         <Stay />
       </Section>
-      <Section id="rsvp">
+      {/* <Section id="rsvp">
         <RSVP />
-      </Section>
-      <Section id="registry">
+      </Section> */}
+      {/* <Section id="registry">
         <Registry />
-      </Section>
+      </Section> */}
       <Section id="faq">
         <FAQ />
       </Section>

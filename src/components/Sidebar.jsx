@@ -16,11 +16,12 @@ const Sidebar = ({ isMobile }) => {
   // Sections
   const introSection = useScrollSection("intro");
   const homeSection = useScrollSection("home");
+  const picsSection = useScrollSection("pics");
   const whereSection = useScrollSection("where");
   const scheduleSection = useScrollSection("schedule");
   const staySection = useScrollSection("stay");
-  const rsvpSection = useScrollSection("rsvp");
-  const registrySection = useScrollSection("registry");
+  // const rsvpSection = useScrollSection("rsvp");
+  // const registrySection = useScrollSection("registry");
   const faqSection = useScrollSection("faq");
 
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -72,6 +73,17 @@ const Sidebar = ({ isMobile }) => {
                 >
                   <div>Home</div>
                 </button>
+
+                <button
+                  onClick={() => {
+                    setMobileSidebarOpen(false);
+                    picsSection.onClick();
+                  }}
+                  className={picsSection.selected ? "selected" : ""}
+                >
+                  <div>Photos</div>
+                </button>
+
                 <button
                   onClick={() => {
                     setMobileSidebarOpen(false);
@@ -99,7 +111,7 @@ const Sidebar = ({ isMobile }) => {
                 >
                   <div>Stay</div>
                 </button>
-                <button
+                {/* <button
                   onClick={() => {
                     setMobileSidebarOpen(false);
                     rsvpSection.onClick();
@@ -116,7 +128,7 @@ const Sidebar = ({ isMobile }) => {
                   className={registrySection.selected ? "selected" : ""}
                 >
                   <div>Registry</div>
-                </button>
+                </button> */}
                 <button
                   onClick={() => {
                     setMobileSidebarOpen(false);
@@ -147,6 +159,12 @@ const Sidebar = ({ isMobile }) => {
                 <div>Home</div>
               </button>
               <button
+                onClick={picsSection.onClick}
+                className={picsSection.selected ? "selected" : ""}
+              >
+                <div>Photos</div>
+              </button>
+              <button
                 onClick={whereSection.onClick}
                 className={whereSection.selected ? "selected" : ""}
               >
@@ -164,7 +182,7 @@ const Sidebar = ({ isMobile }) => {
               >
                 <div>Stay</div>
               </button>
-              <button
+              {/* <button
                 onClick={rsvpSection.onClick}
                 className={rsvpSection.selected ? "selected" : ""}
               >
@@ -175,7 +193,7 @@ const Sidebar = ({ isMobile }) => {
                 className={registrySection.selected ? "selected" : ""}
               >
                 <div>Registry</div>
-              </button>
+              </button> */}
               <button
                 onClick={faqSection.onClick}
                 className={faqSection.selected ? "selected" : ""}
